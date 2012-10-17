@@ -1,0 +1,16 @@
+#!/bin/bash
+
+REPO=$1
+GIT_DIR=/var/cache/git/repositories
+
+if [ -z $REPO ]
+then
+  echo "usage: git-create-repo <repository>"
+  exit
+fi
+
+mkdir -p $GIT_DIR/$REPO.git
+cd $GIT_DIR/$REPO.git && git --bare init
+chown -R git:git $GIT_DIR/$REPO.git
+
+echo "Created new git repository $REPO"
