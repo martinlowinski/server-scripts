@@ -9,7 +9,7 @@ fi
 # nginx
 ###
 echo Deploy certs to nginx..;
-domains=("webmail.halfthetruth.de" "www.goldtopf.org")
+domains=("www.example.com")
 
 for domain in "${domains[@]}"
 do

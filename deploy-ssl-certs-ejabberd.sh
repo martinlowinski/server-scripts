@@ -9,7 +9,7 @@ fi
 # ejabberd 
 ###
 echo Deploy certs to ejabberd..;
-domains=("www.goldtopf.org")
+domains=("www.example.com")
 
 for domain in "${domains[@]}"
 do
