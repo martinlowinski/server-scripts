@@ -22,20 +22,3 @@ ls -l /etc/nginx/ssl/*.pem
 echo "Reloading nginx.."
 /etc/init.d/nginx reload
 
-###
-# ejabberd 
-###
-echo Deploy certs to ejabberd..;
-domains=("www.goldtopf.org")
-
-for domain in "${domains[@]}"
-do
-  echo Deploying $domain..;
-  cat ${domain}.key ${domain}.crt > /etc/ejabberd/${domain}.pem
-done;
-
-ls -l /etc/ejabberd/*.pem
-
-echo "Reloading ejabberd.."
-/etc/init.d/ejabberd restart
-
