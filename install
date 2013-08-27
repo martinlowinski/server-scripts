@@ -1,0 +1,18 @@
+#!/bin/bash
+
+mydir=`dirname $0`
+if [[ $mydir = . ]]; then
+  mydir=`pwd`
+fi
+dest=$HOME
+
+mkdir -p $HOME/bin/
+for script in `ls $mydir`
+do
+  if [[ $script = "install" ]]; then
+    continue
+  fi
+  ln -s $mydir/$script $HOME/bin/$script
+done;
+
+echo "Installed to" $HOME/bin/server-scripts
