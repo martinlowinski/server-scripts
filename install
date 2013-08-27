@@ -6,13 +6,15 @@ if [[ $mydir = . ]]; then
 fi
 dest=$HOME
 
-mkdir -p $HOME/bin/
+#mkdir -p $HOME/bin/
+excludes="install README"
 for script in `ls $mydir`
 do
-  if [[ $script = "install" ]]; then
+  if [[ $excludes =~ $script ]]; then
     continue
   fi
-  ln -s $mydir/$script $HOME/bin/$script
+  #ln -s $mydir/$script $HOME/bin/$script
+  echo $mydir/$script $HOME/bin/$script
 done;
 
-echo "Installed to" $HOME/bin/server-scripts
+echo "Installed to" $HOME/bin/
