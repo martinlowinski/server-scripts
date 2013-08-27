@@ -6,6 +6,11 @@
 # Creates a bare git repository in $GIT_DIR
 ###
 
+if [ "$(whoami)" != 'root' ]; then
+  echo "Error: $0 requires root/super user access."
+  exit 1;
+fi
+
 REPO=$1
 GIT_DIR=/var/cache/git/repositories
 
