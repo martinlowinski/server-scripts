@@ -1,5 +1,11 @@
 #!/bin/bash
 
+###
+# git-create-repo
+#
+# Creates a bare git repository in $GIT_DIR
+###
+
 REPO=$1
 GIT_DIR=/var/cache/git/repositories
 
